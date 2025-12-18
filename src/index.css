@@ -1,0 +1,37 @@
+/* Google Font Family 1.Jost 2.Roboto */
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  font-family: "Roboto", sans-serif;
+  /* font-family: "Fredoka", sans-serif; */
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.fJost {
+  font-family: "Jost", sans-serif;
+}
+
+/* TailWind Css And DaisiUI css Import */
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default;
+}
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: #e40819;
+  --color-base-200: #161616;
+  --color-text: #cecfd1;
+}
+
+/* Navbar Profile Item Css */
+.profileItem {
+  @apply flex items-center gap-3 hover:text-[#ffffffbf] cursor-pointer duration-200;
+}
+.footerSocialIcon {
+  @apply w-8 h-8 border border-[#bdbdbd6e] rounded-full flex items-center justify-center hover:bg-primary hover:border-primary duration-300 cursor-pointer;
+}
