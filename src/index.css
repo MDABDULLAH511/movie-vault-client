@@ -35,3 +35,8 @@ h6,
 .footerSocialIcon {
   @apply w-8 h-8 border border-[#bdbdbd6e] rounded-full flex items-center justify-center hover:bg-primary hover:border-primary duration-300 cursor-pointer;
 }
+
+.authInput{
+  @apply input w-full bg-black/10 border border-primary/50
+}
+

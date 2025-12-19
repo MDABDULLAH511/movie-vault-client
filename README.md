@@ -11,3 +11,7 @@ The purpose of Movie Vault is to provide users with an easy and efficient way to
 -Tailwind CSS
 -DaiSyUi
 -React Icons
+-Firebase
+-React Hook Form
+-React Toastify
+-Axios
