@@ -33,7 +33,7 @@ const MovieCard = ({ movie }) => {
 
         {/* Button */}
         <div className="mt-auto pt-4">
-          <Link to={`/movies/${_id}`}>
+          <Link to={`/movie/${_id}`}>
             <button className="btn btn-sm w-full bg-primary text-white border-none hover:bg-red-800">
               View Details
             </button>

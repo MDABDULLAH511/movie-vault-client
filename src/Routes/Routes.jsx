@@ -10,6 +10,8 @@ import MyCollection from "../Pages/Movies/MyCollection";
 import WatchList from "../Pages/Watchlist/Watchlist";
 import PrivateRoute from "./PrivateRoute";
 import MovieDetails from "../Pages/Movies/MovieDetails";
+import UpdateMovie from "../Pages/Movies/UpdateMovie";
+import AddMovie from "../Pages/Movies/AddMovie";
 
 const router = createBrowserRouter([
   {
@@ -35,7 +37,7 @@ const router = createBrowserRouter([
         Component: AllMovies,
       },
       {
-        path: `/movieDetails/:id`,
+        path: `/movie/:id`,
         Component: MovieDetails,
       },
       {
@@ -50,7 +52,7 @@ const router = createBrowserRouter([
         path: "/addMovie",
         element: (
           <PrivateRoute>
-            <MyCollection />
+            <AddMovie />
           </PrivateRoute>
         ),
       },
@@ -58,7 +60,7 @@ const router = createBrowserRouter([
         path: `/updateMovie/:id`,
         element: (
           <PrivateRoute>
-            <MyCollection />
+            <UpdateMovie />
           </PrivateRoute>
         ),
       },

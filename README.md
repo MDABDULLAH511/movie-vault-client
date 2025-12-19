@@ -16,3 +16,4 @@ The purpose of Movie Vault is to provide users with an easy and efficient way to
 -React Toastify
 -Axios
 -Tanstack
+-Sweetalert2
