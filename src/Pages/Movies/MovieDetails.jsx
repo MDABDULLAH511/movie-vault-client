@@ -100,13 +100,6 @@ const MovieDetails = () => {
           {/* Owner Actions */}
           {isOwner && (
             <div className="flex gap-3 pt-6">
-              <button
-                onClick={() => navigate(`updateMovie/${movie._id}`)}
-                className="btn bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-2"
-              >
-                <FaEdit /> Edit
-              </button>
-
               <Link
                 to={`/updateMovie/${movie._id}`}
                 className="btn bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-2"

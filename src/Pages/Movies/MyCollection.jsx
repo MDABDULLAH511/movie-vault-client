@@ -98,7 +98,8 @@ const MyCollection = () => {
           {/* Movie Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {myMovies.map((movie) => (
-              <div
+              <Link
+                to={`/movie/${movie._id}`}
                 key={movie._id}
                 className="bg-[#1c1c1c] rounded-lg overflow-hidden shadow-md hover:shadow-xl transition"
               >
@@ -128,7 +129,7 @@ const MyCollection = () => {
                   {/* Action Buttons */}
                   <div className="flex justify-between items-center pt-4">
                     <Link
-                      to={`/movies/update/${movie._id}`}
+                      to={`/updateMovie/${movie._id}`}
                       className="btn btn-sm bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-1"
                     >
                       <FaEdit /> Edit
@@ -142,7 +143,7 @@ const MyCollection = () => {
                     </button>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
