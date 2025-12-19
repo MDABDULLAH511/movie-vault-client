@@ -4,7 +4,7 @@ import useAuth from "../../Hooks/UseAuth";
 import LoadingSpinner from "../../Components/LoadingSpinner";
 import useAxios from "../../Hooks/useAxios";
 import { useQuery } from "@tanstack/react-query";
-import Swal from "sweetalert2";
+import Swal from "sweetalert2"; 
 import { toast } from "react-toastify";
 
 const MovieDetails = () => {

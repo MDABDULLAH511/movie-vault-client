@@ -1,5 +1,5 @@
 import React from "react";
-import allMovieBG from "../../assets/rabbit.webp";
+import allMovieBG from "../../assets/gameofhero.jpg";
 import { FaChevronRight, FaHome } from "react-icons/fa";
 import { Link } from "react-router";
 import Container from "../../Components/Container";
@@ -28,7 +28,7 @@ const AllMovies = () => {
     <div>
       {/* Page Banner */}
       <div
-        className="bg-cover bg-center relative flex items-center justify-center py-20 px-5 lg:py-10 lg-px-5 h-[200px] lg:h-[300px] "
+        className="bg-cover bg-top-center relative flex items-center justify-center py-20 px-5 lg:py-10 lg-px-5 h-[200px] lg:h-[400px] "
         style={{
           backgroundImage: `url(${allMovieBG})`,
         }}
