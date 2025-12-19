@@ -53,10 +53,10 @@ const MovieDetails = () => {
   const isOwner = movie.addedBy === user?.email;
 
   return (
-    <div className=" bg-[#161616] py-10 lg:py-20 text-white flex justify-center">
+    <div className=" bg-[#161616] py-10 lg:py-20 px-5 lg:px-0 text-white flex justify-center">
       <div className="max-w-4xl w-full bg-[#1f1f1f] rounded-xl shadow-lg overflow-hidden flex flex-col ">
         {/* Poster */}
-        <div className="h-[300px] md:h-[400px]">
+        <div className="h-[200px] md:h-[400px]">
           <img
             src={movie.posterUrl}
             alt={movie.title}

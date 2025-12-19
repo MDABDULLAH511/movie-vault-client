@@ -53,7 +53,7 @@ const AllMovies = () => {
       {/* Page Content */}
       <div className="bg-base-200 py-10 lg:py-20">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {movies.map((movie) => (
               <MovieCard key={movie._id} movie={movie} />
             ))}
