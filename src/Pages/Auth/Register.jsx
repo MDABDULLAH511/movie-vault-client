@@ -6,9 +6,11 @@ import { toast } from "react-toastify";
 import registerPageBGImage from "../../assets/authbg.webp";
 import useAuth from "../../Hooks/UseAuth";
 import SocialLogin from "./SocialLogin";
+import useAxios from "../../Hooks/useAxios";
 
 const Register = () => {
   const { setUser, registerUser, updateUserProfile, setLoading } = useAuth();
+  const axiosInstance = useAxios();
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -38,6 +40,19 @@ const Register = () => {
         axios.post(imageAPI_URL, formData).then((res) => {
           const photoURL = res.data.data.url;
 
+          //Create user on database
+          const userInfo = {
+            email: data.email,
+            displayName: data.name,
+            photoURL: photoURL,
+          };
+          axiosInstance
+            .post("/user", userInfo)
+            .then(() => {})
+            .catch(() => {
+              toast.error("🐾 Something went wrong. Please try again later!");
+            });
+
           // Update User Profile
           const userProfile = {
             displayName: data.name,
@@ -48,7 +63,9 @@ const Register = () => {
               toast("Account created successfully! 🎉");
               navigate(location.state || "/");
             })
-            .catch((error) => {});
+            .catch(() => {
+              toast.error("🐾 Something went wrong. Please try again later!");
+            });
         });
       })
       .catch((error) => {
