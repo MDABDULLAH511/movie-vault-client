@@ -8,9 +8,9 @@ import { LuLayoutDashboard, LuUser } from "react-icons/lu";
 import { FaPlus } from "react-icons/fa6";
 import { MdClose, MdLogout } from "react-icons/md";
 import { CgMenuRightAlt } from "react-icons/cg";
-import useAuth from "../Hooks/UseAuth";
 import LoadingSpinner from "./LoadingSpinner";
 import toast from "daisyui/components/toast";
+import useAuth from "../Hooks/UseAuth";
 
 const Navbar = () => {
   const { user, loading, signOutUser } = useAuth();
@@ -37,12 +37,17 @@ const Navbar = () => {
       <li>
         <MyNavLink to="/myCollection">My Collection</MyNavLink>
       </li>
+      {user && (
+        <li>
+          <MyNavLink to="/AddMovie">Add Movie</MyNavLink>
+        </li>
+      )}
     </>
   );
 
   return (
     <>
-      <div className="shadow-sm md:py-0 bg-base-200">
+      <div className="shadow-sm md:py-0 bg-base-200 border-b border-gray-700">
         <Container>
           <div className="flex justify-between   relative  items-center py-2.5 px-0 ">
             {/* Nav Logo */}

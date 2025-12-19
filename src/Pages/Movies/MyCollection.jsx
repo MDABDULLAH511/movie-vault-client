@@ -1,11 +1,4 @@
 import React from "react";
-import {
-  FaEdit,
-  FaTrash,
-  FaStar,
-  FaHome,
-  FaChevronRight,
-} from "react-icons/fa";
 import { Link } from "react-router";
 import useAuth from "../../Hooks/UseAuth";
 import { useQuery } from "@tanstack/react-query";
@@ -14,6 +7,14 @@ import { toast } from "react-toastify";
 import LoadingSpinner from "../../Components/LoadingSpinner";
 import Swal from "sweetalert2";
 import myCollectionBG from "../../assets/rabbit.webp";
+import Container from "../../Components/Container";
+import {
+  FaEdit,
+  FaTrash,
+  FaStar,
+  FaHome,
+  FaChevronRight,
+} from "react-icons/fa";
 
 const MyCollection = () => {
   const { user, loading } = useAuth();
@@ -58,6 +59,7 @@ const MyCollection = () => {
 
   return (
     <div>
+      {/* Page Banner */}
       <div
         className="bg-cover bg-top-center relative flex items-center justify-center py-20 px-5 lg:py-10 lg-px-5 h-[200px] lg:h-[400px] "
         style={{
@@ -80,8 +82,8 @@ const MyCollection = () => {
           </div>
         </div>
       </div>
-      <div className="min-h-screen bg-[#161616] text-white px-6 py-10">
-        <div className="max-w-6xl mx-auto">
+      <div className="bg-base-200 py-10 lg:py-20 text-white">
+        <Container>
           {/* Empty State */}
           {myMovies.length === 0 && (
             <div className="text-center py-20 text-gray-400">
@@ -98,8 +100,7 @@ const MyCollection = () => {
           {/* Movie Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {myMovies.map((movie) => (
-              <Link
-                to={`/movie/${movie._id}`}
+              <div
                 key={movie._id}
                 className="bg-[#1c1c1c] rounded-lg overflow-hidden shadow-md hover:shadow-xl transition"
               >
@@ -112,9 +113,11 @@ const MyCollection = () => {
 
                 {/* Card Content */}
                 <div className="p-4 space-y-2">
-                  <h2 className="text-xl font-semibold truncate">
-                    {movie.title}
-                  </h2>
+                  <Link to={`/movie/${movie._id}`}>
+                    <h2 className="text-xl font-semibold truncate">
+                      {movie.title}
+                    </h2>
+                  </Link>
 
                   <p className="text-sm text-gray-400">
                     {movie.genre} • {movie.releaseYear}
@@ -143,10 +146,10 @@ const MyCollection = () => {
                     </button>
                   </div>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
-        </div>
+        </Container>
       </div>
     </div>
   );

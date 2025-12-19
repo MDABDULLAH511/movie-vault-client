@@ -36,7 +36,21 @@ h6,
   @apply w-8 h-8 border border-[#bdbdbd6e] rounded-full flex items-center justify-center hover:bg-primary hover:border-primary duration-300 cursor-pointer;
 }
 
-.authInput{
-  @apply input w-full bg-black/10 border border-primary/50
+.authInput {
+  @apply input w-full bg-black/10 border border-primary/50;
 }
 
+.movieInput {
+  @apply input rounded w-full border-none bg-[#161616] mt-1 mb-2;
+}
+
+/* Your custom CSS below */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
