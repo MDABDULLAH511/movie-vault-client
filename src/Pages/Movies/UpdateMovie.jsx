@@ -13,7 +13,7 @@ import useAxios from "../../Hooks/useAxios";
 import { useQuery } from "@tanstack/react-query";
 
 const UpdateMovie = () => {
-  const { user, loading } = useAuth();
+  const { user, loading, setLoading } = useAuth();
   const axiosInstance = useAxios();
   const navigate = useNavigate();
   const { id } = useParams();
@@ -56,6 +56,7 @@ const UpdateMovie = () => {
   }
 
   const onSubmit = async (data) => {
+    setLoading(true);
     let posterUrl = movie.posterUrl;
 
     if (data.poster && data.poster.length > 0) {
@@ -89,6 +90,7 @@ const UpdateMovie = () => {
     if (res.data.modifiedCount) {
       toast.success("Movie Updated Successfully 🎉");
       navigate(`/movie/${movie?._id}`);
+      setLoading(false);
     }
   };
 

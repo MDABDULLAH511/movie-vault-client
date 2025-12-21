@@ -12,7 +12,7 @@ import axios from "axios";
 import useAxios from "../../Hooks/useAxios";
 
 const AddMovie = () => {
-  const { user, loading } = useAuth();
+  const { user, loading, setLoading } = useAuth();
   const axiosInstance = useAxios();
   const navigate = useNavigate();
 
@@ -23,6 +23,7 @@ const AddMovie = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
+    setLoading(true);
     const posterPhoto = data.poster && data.poster[0];
 
     //store the image and get the Photo url
@@ -51,6 +52,7 @@ const AddMovie = () => {
         if (res.data.insertedId) {
           toast.success("Movie Added Successfully 🎉");
           navigate("/myCollection");
+          setLoading(false);
         }
       });
     });
