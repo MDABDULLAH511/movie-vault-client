@@ -17,3 +17,4 @@ The purpose of Movie Vault is to provide users with an easy and efficient way to
 -Axios
 -Tanstack
 -Sweetalert2
+-Swiper slider

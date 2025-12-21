@@ -1,10 +1,11 @@
-import React from "react";
-import LoadingSpinner from "../../Components/LoadingSpinner";
+
+import HeroCarousel from "./HeroCarousel";
 
 const Home = () => {
   return (
     <div>
-     <h2>Home Page</h2>
+      <HeroCarousel />
+    
     </div>
   );
 };
