@@ -15,6 +15,7 @@ const MovieDetails = () => {
 
   const {
     refetch,
+    isError,
     data: movie = [],
     isLoading,
   } = useQuery({
@@ -24,6 +25,11 @@ const MovieDetails = () => {
       return res.data;
     },
   });
+
+    if (isError || !movie?._id) {
+    navigate("/error");
+  }
+
 
   if (loading || isLoading) {
     return <LoadingSpinner />;
