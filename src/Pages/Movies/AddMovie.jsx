@@ -114,6 +114,9 @@ const AddMovie = () => {
                   className="movieInput"
                   {...register("genre", { required: true })}
                 />
+                {errors.genre && (
+                  <p className="text-red-500 text-sm">Genre is required</p>
+                )}
               </div>
 
               {/* Release Year & Rating */}
@@ -126,6 +129,11 @@ const AddMovie = () => {
                     className="movieInput"
                     {...register("releaseYear", { required: true })}
                   />
+                  {errors.releaseYear && (
+                    <p className="text-red-500 text-sm">
+                      Release Year is required
+                    </p>
+                  )}
                 </div>
 
                 <div>
@@ -137,6 +145,9 @@ const AddMovie = () => {
                     className="movieInput"
                     {...register("rating", { required: true })}
                   />
+                  {errors.rating && (
+                    <p className="text-red-500 text-sm">Rating is required</p>
+                  )}
                 </div>
               </div>
 
@@ -148,6 +159,9 @@ const AddMovie = () => {
                   className="movieInput"
                   {...register("director", { required: true })}
                 />
+                {errors.director && (
+                  <p className="text-red-500 text-sm">Director is required</p>
+                )}
               </div>
 
               {/* Cast */}
@@ -158,6 +172,9 @@ const AddMovie = () => {
                   className="movieInput"
                   {...register("cast", { required: true })}
                 />
+                {errors.cast && (
+                  <p className="text-red-500 text-sm">Cast is required</p>
+                )}
               </div>
 
               {/* Duration */}
@@ -169,22 +186,36 @@ const AddMovie = () => {
                   className="movieInput"
                   {...register("duration", { required: true })}
                 />
+                {errors.duration && (
+                  <p className="text-red-500 text-sm">Duration is required</p>
+                )}
               </div>
 
               {/* Language & Country */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  placeholder="Language"
-                  className="movieInput"
-                  {...register("language", { required: true })}
-                />
-                <input
-                  type="text"
-                  placeholder="Country"
-                  className="movieInput"
-                  {...register("country", { required: true })}
-                />
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Language"
+                    className="movieInput"
+                    {...register("language", { required: true })}
+                  />
+                  {errors.language && (
+                    <p className="text-red-500 text-sm">Language is required</p>
+                  )}
+                </div>
+
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Country"
+                    className="movieInput"
+                    {...register("country", { required: true })}
+                  />
+                  {errors.country && (
+                    <p className="text-red-500 text-sm">Country is required</p>
+                  )}
+                </div>
               </div>
 
               {/* Poster URL */}
@@ -195,6 +226,11 @@ const AddMovie = () => {
                   className=" border-none file-input w-full  bg-black/10 border border-primary/50 file:bg-primary  file:text-white"
                   {...register("poster", { required: true })}
                 />
+                {errors.poster && (
+                  <p className="text-red-500 text-sm">
+                    Poster Image is required
+                  </p>
+                )}
               </div>
 
               {/* Plot Summary */}
@@ -205,6 +241,11 @@ const AddMovie = () => {
                   className="textarea textarea-bordered w-full bg-[#161616]"
                   {...register("plotSummary", { required: true })}
                 ></textarea>
+                {errors.plotSummary && (
+                  <p className="text-red-500 text-sm">
+                    Plot Summary is required
+                  </p>
+                )}
               </div>
 
               {/* Submit */}
