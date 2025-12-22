@@ -13,7 +13,7 @@ import {
 
 const Footer = () => {
   return (
-    <div className="pt-20 bg-base-200 text-white">
+    <div className="pt-20 bg-base-200 text-white border-t border-gray-700">
       <Container>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12">
           {/* footer logo */}
