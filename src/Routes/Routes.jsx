@@ -7,11 +7,11 @@ import Login from "../Pages/Auth/Login";
 import Register from "../Pages/Auth/Register";
 import AllMovies from "../Pages/Movies/AllMovies";
 import MyCollection from "../Pages/Movies/MyCollection";
-import WatchList from "../Pages/Watchlist/Watchlist";
 import PrivateRoute from "./PrivateRoute";
 import MovieDetails from "../Pages/Movies/MovieDetails";
 import UpdateMovie from "../Pages/Movies/UpdateMovie";
 import AddMovie from "../Pages/Movies/AddMovie";
+import WatchList from "../Pages/WatchedList/WatchList";
 
 const router = createBrowserRouter([
   {

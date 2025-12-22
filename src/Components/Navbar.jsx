@@ -10,7 +10,7 @@ import { MdClose, MdLogout } from "react-icons/md";
 import { CgMenuRightAlt } from "react-icons/cg";
 import LoadingSpinner from "./LoadingSpinner";
 import toast from "daisyui/components/toast";
-import useAuth from "../Hooks/UseAuth";
+import useAuth from "../Hooks/useAuth";
 
 const Navbar = () => {
   const { user, loading, signOutUser } = useAuth();
@@ -37,10 +37,16 @@ const Navbar = () => {
       <li>
         <MyNavLink to="/myCollection">My Collection</MyNavLink>
       </li>
+
       {user && (
-        <li>
-          <MyNavLink to="/AddMovie">Add Movie</MyNavLink>
-        </li>
+        <>
+          <li>
+            <MyNavLink to="/addMovie">Add Movie</MyNavLink>
+          </li>
+          <li>
+            <MyNavLink to="/watchList">Watched Movie</MyNavLink>
+          </li>
+        </>
       )}
     </>
   );

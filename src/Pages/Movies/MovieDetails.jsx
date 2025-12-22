@@ -1,11 +1,12 @@
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { Link, useNavigate, useParams } from "react-router";
-import useAuth from "../../Hooks/UseAuth";
+import useAuth from "../../Hooks/useAuth";
 import LoadingSpinner from "../../Components/LoadingSpinner";
 import useAxios from "../../Hooks/useAxios";
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import { toast } from "react-toastify";
+import WatchedButton from "./WatchedButton";
 
 const MovieDetails = () => {
   const { id } = useParams();
@@ -26,10 +27,9 @@ const MovieDetails = () => {
     },
   });
 
-    if (isError || !movie?._id) {
+  if (isError || !movie?._id) {
     navigate("/error");
   }
-
 
   if (loading || isLoading) {
     return <LoadingSpinner />;
@@ -72,7 +72,10 @@ const MovieDetails = () => {
 
         {/* Details */}
         <div className="p-5 md:p-10 flex flex-col text-gray-300">
-          <h2 className="text-3xl font-bold text-white">{movie.title}</h2>
+          <div className="flex flex-col-reverse md:flex-row justify-between md:items-center gap-5 ">
+            <h2 className="text-3xl font-bold text-white">{movie.title}</h2>
+            <WatchedButton movie={movie} />
+          </div>
           <p className="mt-2">
             <strong>Genre:</strong> {movie.genre}
           </p>
