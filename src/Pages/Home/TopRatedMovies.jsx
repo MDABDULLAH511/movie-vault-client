@@ -26,7 +26,7 @@ const TopRatedMovies = () => {
   return (
     <div className="bg-base-200 py-10 lg:py-20">
       <Container>
-        <div className="mb-6 pb-1.5 border-b-2 border-gray-700">
+        <div className="mb-6 pb-1.5 border-b-2 border-gray-700 animate-fadeIn">
           <h2 className="font-semibold  text-3xl lg:text-4xl text-white">
             Top Rated <span className="text-primary fJost">Movies</span>
           </h2>

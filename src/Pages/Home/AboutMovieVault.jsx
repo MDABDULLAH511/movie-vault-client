@@ -31,25 +31,24 @@ const AboutMovieVault = () => {
     <div className="py-10 lg:py-20 bg-[#1c1c1c]">
       <Container>
         {/* About Platform */}
-        <div>
-          <div className="mb-8 text-center w-full xl:max-w-9/12 text-white mx-auto">
-            <h2 className="font-semibold  text-3xl lg:text-4xl mb-3">
-              About Movie <span className="text-primary fJost"> Vault</span>
-            </h2>
-            <p>
-              Movie Vault is a modern movie discovery and management platform
-              built for film lovers. It allows users to explore, organize, and
-              manage their favorite movies in one secure and easy-to-use place.
-              With Movie Vault, users can add movies, view detailed information,
-              and keep track of their personal collection. The platform focuses
-              on simplicity, speed, and a clean viewing experience, making it
-              easy to browse movies by genre, year, or rating. Key features
-              include a user-friendly interface, detailed movie pages, secure
-              authentication, and personalized access where users can manage
-              only the content they add. Movie Vault is designed to deliver a
-              smooth and enjoyable experience for anyone who loves movies.
-            </p>
-          </div>
+
+        <div className="mb-8 text-center w-full xl:max-w-9/12 text-white mx-auto animate-fadeIn">
+          <h2 className="font-semibold  text-3xl lg:text-4xl mb-3">
+            About Movie <span className="text-primary fJost"> Vault</span>
+          </h2>
+          <p>
+            Movie Vault is a modern movie discovery and management platform
+            built for film lovers. It allows users to explore, organize, and
+            manage their favorite movies in one secure and easy-to-use place.
+            With Movie Vault, users can add movies, view detailed information,
+            and keep track of their personal collection. The platform focuses on
+            simplicity, speed, and a clean viewing experience, making it easy to
+            browse movies by genre, year, or rating. Key features include a
+            user-friendly interface, detailed movie pages, secure
+            authentication, and personalized access where users can manage only
+            the content they add. Movie Vault is designed to deliver a smooth
+            and enjoyable experience for anyone who loves movies.
+          </p>
         </div>
 
         {/* Stats */}

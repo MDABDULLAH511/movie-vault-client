@@ -21,7 +21,7 @@ const GenreListWithImage = () => {
   return (
     <section className="py-10 lg:py-20 bg-[#1c1c1c]">
       <Container>
-        <div>
+        <div className="animate-fadeIn">
           <div className="mb-6 pb-1.5 border-b-2 border-gray-700 text-center">
             <h2 className="font-semibold  text-3xl lg:text-4xl text-white">
               Browse by <span className="text-primary fJost">Genre</span>
