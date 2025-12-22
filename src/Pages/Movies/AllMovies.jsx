@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import allMovieBG from "../../assets/gameofhero.jpg";
 import { FaChevronRight, FaHome } from "react-icons/fa";
 import { Link } from "react-router";
@@ -7,18 +7,24 @@ import { useQuery } from "@tanstack/react-query";
 import useAxios from "../../Hooks/useAxios";
 import LoadingSpinner from "../../Components/LoadingSpinner";
 import MovieCard from "./MovieCard";
+import MovieFilter from "./MovieFilter/MovieFilter";
 
 const AllMovies = () => {
   const axiosInstance = useAxios();
+  const [movies, setMovies] = useState([]);
 
-  // Load All move from DB
-  const { data: movies = [], isLoading } = useQuery({
+  const { data: allMovies = [], isLoading } = useQuery({
     queryKey: ["movies"],
     queryFn: async () => {
-      const res = await axiosInstance.get(`/movie`);
+      const res = await axiosInstance.get("/movie");
       return res.data;
     },
   });
+
+  // add movies when data loads
+  useEffect(() => {
+    setMovies(allMovies);
+  }, [allMovies]);
 
   if (isLoading) {
     return <LoadingSpinner />;
@@ -53,11 +59,21 @@ const AllMovies = () => {
       {/* Page Content */}
       <div className="bg-base-200 py-10 lg:py-20">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {movies.map((movie) => (
-              <MovieCard key={movie._id} movie={movie} />
-            ))}
-          </div>
+          <MovieFilter setMovies={setMovies} movies={movies} />
+          {movies.length === 0 ? (
+            <div className="text-center text-gray-400 py-16">
+              <h3 className="text-xl font-semibold mb-2">
+                No movies match your selected filters
+              </h3>
+              <p>Try adjusting or resetting your filters.</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {movies.map((movie) => (
+                <MovieCard key={movie._id} movie={movie} />
+              ))}
+            </div>
+          )}
         </Container>
       </div>
     </div>
