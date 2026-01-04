@@ -45,9 +45,7 @@ const AddMovie = () => {
         addedBy: user?.email,
         createdAt: new Date(),
       };
-
-      console.log("movieData", movieData);
-
+      
       axiosInstance.post("/movie", movieData).then((res) => {
         if (res.data.insertedId) {
           toast.success("Movie Added Successfully 🎉");

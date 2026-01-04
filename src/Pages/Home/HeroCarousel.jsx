@@ -26,8 +26,6 @@ const HeroSlider = () => {
     return <LoadingSpinner />;
   }
 
-  console.log(featuredMovie);
-
   // ✅ Prevent Swiper from rendering with empty data
   if (featuredMovie.length === 0) return null;
 
