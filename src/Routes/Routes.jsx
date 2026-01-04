@@ -12,6 +12,7 @@ import MovieDetails from "../Pages/Movies/MovieDetails";
 import UpdateMovie from "../Pages/Movies/UpdateMovie";
 import AddMovie from "../Pages/Movies/AddMovie";
 import WatchList from "../Pages/WatchedList/WatchList";
+import AboutUs from "../Pages/About Us/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
             <WatchList />
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/aboutUs",
+        Component: AboutUs,
       },
     ],
   },

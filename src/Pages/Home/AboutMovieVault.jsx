@@ -5,6 +5,7 @@ import useAxios from "../../Hooks/useAxios";
 import { FaUserGroup } from "react-icons/fa6";
 import LoadingSpinner from "../../Components/LoadingSpinner";
 import { MdLocalMovies } from "react-icons/md";
+import { Link } from "react-router";
 
 const AboutMovieVault = () => {
   const axiosInstance = useAxios();
@@ -49,6 +50,14 @@ const AboutMovieVault = () => {
             the content they add. Movie Vault is designed to deliver a smooth
             and enjoyable experience for anyone who loves movies.
           </p>
+          <div className="mt-10 mb-10">
+            <Link
+              to={`/aboutUs`}
+              className=" bg-red-600 hover:bg-red-700 px-6 py-3 rounded text-white font-semibold"
+            >
+              Read More
+            </Link>
+          </div>
         </div>
 
         {/* Stats */}
