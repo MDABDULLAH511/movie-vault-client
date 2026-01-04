@@ -13,6 +13,10 @@ import UpdateMovie from "../Pages/Movies/UpdateMovie";
 import AddMovie from "../Pages/Movies/AddMovie";
 import WatchList from "../Pages/WatchedList/WatchList";
 import AboutUs from "../Pages/About Us/AboutUs";
+import DashboardLayout from "../Layouts/DashboardLayout";
+import UserDashboardHome from "../Pages/Dashboard/UserDashboardHome/UserDashboardHome";
+import DashboardProfile from "../Pages/Dashboard/DashboardProfile/DashboardProfile";
+import Settings from "../Pages/Settings/Settings";
 
 const router = createBrowserRouter([
   {
@@ -42,14 +46,6 @@ const router = createBrowserRouter([
         Component: MovieDetails,
       },
       {
-        path: "/myCollection",
-        element: (
-          <PrivateRoute>
-            <MyCollection />
-          </PrivateRoute>
-        ),
-      },
-      {
         path: "/addMovie",
         element: (
           <PrivateRoute>
@@ -66,16 +62,47 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/watchList",
-        element: (
-          <PrivateRoute>
-            <WatchList />
-          </PrivateRoute>
-        ),
-      },
-      {
         path: "/aboutUs",
         Component: AboutUs,
+      },
+    ],
+  },
+
+  {
+    path: "dashboard",
+    element: (
+      <PrivateRoute>
+        <DashboardLayout />
+      </PrivateRoute>
+    ),
+    hydrateFallbackElement: <LoadingSpinner />,
+    errorElement: <NotFound />,
+    children: [
+      {
+        index: true,
+        Component: UserDashboardHome,
+      },
+      {
+        path: "profile",
+        Component: DashboardProfile,
+      },
+
+      {
+        path: "add-movie",
+        Component: AddMovie,
+      },
+
+      {
+        path: "my-collections",
+        Component: MyCollection,
+      },
+      {
+        path: "my-watched",
+        Component: WatchList,
+      },
+      {
+        path: "settings",
+        Component: Settings,
       },
     ],
   },

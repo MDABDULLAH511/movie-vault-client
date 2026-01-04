@@ -4,8 +4,6 @@ import { Link } from "react-router";
 import Container from "./Container";
 import logo from "/movieVault logo.png";
 import userIcon from "../assets/user.png";
-import { LuLayoutDashboard, LuUser } from "react-icons/lu";
-import { FaPlus } from "react-icons/fa6";
 import { MdClose, MdLogout } from "react-icons/md";
 import { CgMenuRightAlt } from "react-icons/cg";
 import LoadingSpinner from "./LoadingSpinner";
@@ -37,9 +35,6 @@ const Navbar = () => {
       <li>
         <MyNavLink to="/allMovies">All Movies</MyNavLink>
       </li>
-      <li>
-        <MyNavLink to="/myCollection">My Collection</MyNavLink>
-      </li>
 
       {user && (
         <>
@@ -47,7 +42,7 @@ const Navbar = () => {
             <MyNavLink to="/addMovie">Add Movie</MyNavLink>
           </li>
           <li>
-            <MyNavLink to="/watchList">Watched Movie</MyNavLink>
+            <MyNavLink to="/dashboard">Dashboard</MyNavLink>
           </li>
         </>
       )}
@@ -104,6 +99,16 @@ const Navbar = () => {
                         <p className="max-w-[200px] truncate">
                           {user.displayName ? user.displayName : "Unknown"}
                         </p>
+                      </div>
+
+                      {/* Dropdown links */}
+                      <div>
+                        <li>
+                          <MyNavLink to="/dashboard/profile">Profile</MyNavLink>
+                        </li>
+                        <li>
+                          <MyNavLink to="/dashboard">Dashboard</MyNavLink>
+                        </li>
                       </div>
 
                       {/* LogOut Button */}
@@ -200,6 +205,19 @@ const Navbar = () => {
                                     ? user.displayName
                                     : "Unknown"}
                                 </p>
+                              </div>
+                              {/* Dropdown links */}
+                              <div>
+                                <li>
+                                  <MyNavLink to="/dashboard/profile">
+                                    Profile
+                                  </MyNavLink>
+                                </li>
+                                <li>
+                                  <MyNavLink to="/dashboard">
+                                    Dashboard
+                                  </MyNavLink>
+                                </li>
                               </div>
                               {/* Logout Button */}
                               <button
