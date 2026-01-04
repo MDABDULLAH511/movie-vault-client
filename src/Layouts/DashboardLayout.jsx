@@ -55,7 +55,7 @@ const DashboardLayout = () => {
             <li>
               <Link
                 to="/dashboard"
-                className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
+                className="is-drawer-close:tooltip is-drawer-close:tooltip-right text-white"
                 data-tip="Home Page"
               >
                 {/* Home icon */}
@@ -68,7 +68,7 @@ const DashboardLayout = () => {
             <li>
               <Link
                 to="/dashboard/profile"
-                className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
+                className="is-drawer-close:tooltip is-drawer-close:tooltip-right text-white"
                 data-tip="My Profile"
               >
                 {/* Home icon */}
@@ -81,7 +81,7 @@ const DashboardLayout = () => {
             <li>
               <Link
                 to="/dashboard/add-movie"
-                className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
+                className="is-drawer-close:tooltip is-drawer-close:tooltip-right text-white"
                 data-tip="Add Movie"
               >
                 {/* Add Movie icon */}
@@ -95,7 +95,7 @@ const DashboardLayout = () => {
             <li>
               <Link
                 to="/dashboard/my-collections"
-                className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
+                className="is-drawer-close:tooltip is-drawer-close:tooltip-right text-white"
                 data-tip="My Collections"
               >
                 {/* My myCollection icon */}
@@ -109,7 +109,7 @@ const DashboardLayout = () => {
             <li>
               <Link
                 to="/dashboard/my-watched"
-                className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
+                className="is-drawer-close:tooltip is-drawer-close:tooltip-right text-white"
                 data-tip="My Watched"
               >
                 {/* My Lesson icon */}
@@ -124,7 +124,7 @@ const DashboardLayout = () => {
             <li>
               <Link
                 to={"/dashboard/settings"}
-                className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
+                className="is-drawer-close:tooltip is-drawer-close:tooltip-right text-white"
                 data-tip="Settings"
               >
                 {/* Settings icon */}
